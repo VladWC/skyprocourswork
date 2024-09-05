@@ -1,0 +1,322 @@
+.modalwind{
+    border: none;
+    position: absolute;
+    left: calc(40%);
+    margin-top: 14px;
+    background-color: #FFFFFF;
+    padding: 40px 48px 40px 48px;
+    box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+    z-index: 2;
+    &__button{
+        border: $border;
+        border-radius: $border-radius;
+        background-color: white;
+        width: 200px;
+        height: 37px;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+    }
+    &__item{
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: 2fr;
+        grid-template-rows: 12fr;
+            &-time{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                gap: 14px;
+                grid-column: 1/2;
+                grid-row: 1/5;
+                margin-bottom: 32px;
+            }
+            &-prise{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                gap: 14px;
+                grid-column: 1/2;
+                grid-row: 6/8;
+                margin-bottom: 32px;
+                &-position{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            &-color{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                gap: 14px;
+                grid-column: 1/2;
+                grid-row: 9/10;
+                &-checkbox{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 14px;
+                    &-1{
+                        display: flex;
+                        gap: 14px;
+                    }
+                    &-2{
+                        display: flex;
+                        gap: 14px;
+                    }
+                }
+            }
+            &-room{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                gap: 14px;
+                grid-column: 2/3;
+                grid-row: 1/10;
+                padding-left: 65px;
+                width: 190px;
+            }
+            &-button{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                grid-column: 2/3;
+                grid-row: 12/13;
+                margin-top: 36px;
+            }
+        }
+    &__style{
+        &-heading{
+                font-size: 16px;
+                font-weight: bold;
+            }
+        &-text{
+                font-size: 14px;
+                margin-top: 14px;
+            }
+        }
+}
+.item__time{
+    border: none;
+}
+.modalwind__time-radio{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.modalwind__time-radiostyle + label::before{
+    content: "";
+    display: inline-flex;
+    align-content: flex-end;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #888888;
+    margin-right: 5.5px;
+    cursor: pointer;
+}
+.modalwind__time-radiostyle:checked + label::before{
+    background-image: url(./img/checkbox.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.modalwind__time-radiostyle:hover + label::before{
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.prise__range{
+    appearance: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.prise__range::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    width: 100%; 
+    height: 1px;
+    background: #000;
+}
+.prise__range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    position: relative;
+    height: 8px; 
+    width: 8px; 
+    margin-top: -4px;
+    background: #000; 
+    border: 1px solid #000; 
+    border-radius: 25px; 
+    z-index: 1;
+}
+.checkbox__color{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox__color + label:before{
+    content: "";
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+.checkbox__color:checked + label::before{
+    background-image: url(./img/checkbox.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.checkbox__color-whitecheck:checked + label::before{
+    background-image: url(./img/whitecheck.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.modalwind__color{
+    
+    &-white + label::before{
+        background-color: white;
+        border: 1px solid grey;
+       
+    }
+    &-black + label::before{
+        background-color: black;
+        border: 1px solid black;
+        
+    }
+    &-gray + label::before{
+        background-color: gray;
+        border: 1px solid gray; 
+    }
+    &-red + label::before{
+        background-color: #FF0000;
+        border: 1px solid #FF0000;
+    }
+    &-orange + label::before{
+        background-color: #FF7A41;
+        border: 1px solid #FF7A41;
+    }
+    &-yellow + label::before{
+        background-color: #F2CB01;
+        border: 1px solid #F2CB01;
+    }
+    &-green + label::before{
+        background-color: #00BF2A;
+        border: 1px solid #00BF2A;
+    }
+    &-greengrass + label::before{
+        background-color: #1CCC97;
+        border: 1px solid #1CCC97;
+    }
+    &-sky + label::before{
+        background-color: #009FE3;
+        border: 1px solid #009FE3;
+    }
+    &-blu + label::before{
+        background-color: #000AF8;
+        border: 1px solid #000AF8;
+    }
+    &-violet + label::before{
+        background-color: #6710D6;
+        border: 1px solid #6710D6;
+    }
+    &-magenta + label::before{
+        background-color: #9D0DB5;
+        border: 1px solid #9D0DB5;
+    }
+    &-pupple + label::before{
+        background-color: #D89AFF;
+        border: 1px solid #D89AFF;
+    }
+    &-pink + label::before{
+        background-color: #FF65A6;
+        border: 1px solid #FF65A6;
+    }
+}
+.modalwind__room-check{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.modalwind__room-checkstyle + label::before{
+         content: "";
+         display: inline-flex;
+         align-content: flex-end;
+         border-radius: 1%;
+         width: 15px;
+         height: 15px;
+         border: 1px solid #888888;
+         margin-right: 5.5px;
+         cursor: pointer;
+}
+.modalwind__room-checkstyle:checked + label::before{
+    background-image: url(./img/checkbox.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #000;
+    cursor: pointer;
+}  
+.modalwind__room-checkstyle:hover + label::before{
+    border: 1px solid #000;
+    cursor: pointer;
+}  
+// модальное окно index/html
+a.index__href-dialog:hover + #index__dialog {
+    display: block;
+}
+.index__dialog{
+    display: none;
+    position: absolute;
+    margin-top: 38px;
+    padding: 40px 48px 40px 48px;
+    left: 50%;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.32);
+    max-width: 573px;
+    max-height: 480px;
+    &-imgstyle{
+        margin-right: 24px;
+        width: 144px;
+        height: 144px;
+    }
+    &-button{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 48px;
+        justify-content: space-between;
+    }
+    &-prise{
+        padding-top: 6px;
+        font-size: 24px;
+    }
+    &-buttonstyle{
+        width: 207px;
+        height: 40px;
+        font-size: 16px;
+        border: 1px solid #040404;
+        border-radius: 20px 20px 20px 20px;
+        margin-bottom: 145px;
+        font-family: "Montserrat", sans-serif;
+        background: transparent;
+    }
+}
+@media (max-width: 767px){
+       .modalwind{
+        left: 16px;
+       }
+      .modalwind__item{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 32px;
+      }
+    .modalwind__item-room{
+        padding-left: 0px;
+    }
+    .modalwind__item-room{
+        margin-top: 0px;
+    }
+}
